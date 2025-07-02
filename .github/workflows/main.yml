@@ -1,14 +1,14 @@
 name: Automated review
- 
+
 on: [push]
- 
-jobs: 
+
+jobs:
   quality-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
- 
+
       - name: npm updates
         run: npm install
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Build docker image
         run: |
           docker build . \
@@ -36,9 +36,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          
+
       - name: Push image to docker hub
         run: |
-         docker push $IMAGE_NAME:$TAG_DYNAMIC
-         docker push $IMAGE_NAME:latest
- 
+          docker push $IMAGE_NAME:$TAG_DYNAMIC
+          docker push $IMAGE_NAME:latest
