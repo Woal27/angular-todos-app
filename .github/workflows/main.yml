@@ -14,3 +14,10 @@ jobs:
 
       #- name: Run prettier check
         #run: npm run check
+  build-container:
+    runs-on: ubuntu-latest
+    needs: quality-check
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm test
+ 
