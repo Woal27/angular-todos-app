@@ -24,6 +24,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: npm updates
+        run: npm install
         
       - name: Build docker image
         run: |
