@@ -28,5 +28,5 @@ jobs:
           --tag angular-todos-app:$TAG_DYNAMIC \
           --tag angular-todos-app:latest
 
-      - name: wohin docker image
+      #- name: wohin docker image
  
