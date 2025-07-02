@@ -24,7 +24,7 @@ jobs:
       - name: Build docker image
         run: |
           docker build . \
-          --file Dockerfile  \
+          --file Dockerfile \
           --tag angular-todos-app:$TAG_DYNAMIC \
           --tag angular-todos-app:latest
 
